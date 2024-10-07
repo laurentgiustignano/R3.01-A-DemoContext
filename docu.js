@@ -29,7 +29,7 @@ class Document {
   constructor() {
     this.#container = document.querySelector('.container');
     this.#bouton = document.querySelector('button');
-    this.#bouton.addEventListener('click', this.afficher);
+    this.#bouton.addEventListener('click', this.afficher.bind(this));
     this.#compteur = new Compteur();
   }
 
