@@ -40,7 +40,7 @@ class Document {
     console.log(this)
     this.#container.style.display = "block";
     this.#container.innerText = `Compteur : ${this.#compteur.valeur}`
-    setTimeout(this.cacher, 2000)
+    setTimeout(this.cacher.bind(this), 2000)
   }
 
   cacher() {
