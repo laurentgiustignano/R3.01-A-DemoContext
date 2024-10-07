@@ -1,3 +1,10 @@
-# Ça fonctionne !
+# Ça fonctionne avec des Arrows Fonctions
 
-A la ligne 43, Le contexte a été précisé pour le callback de cacher. Il fallait écrire `this.cacher.bind(this)` pour effectuer la liaison. Le `console.log(this)` de la ligne 47 confirme qu'il n'y a plus de problèmes, et le comportement est correct.
+Les fonctions fléchées sont "**immunisées**" au changement de contexte. Leur contexte
+d'exécution correspond à celui dans lequel elles ont été créé.
+
+Ainsi, à la ligne 39 et 46, je transforme les deux méthodes en fonctions fléchées avec
+la syntaxte : `afficher = () => {}`. Je peux alors utiliser cette écriture `this.afficher`
+dans le callback de `addEventListener()`. Même chose pour cacher et son utilisation
+dans `setTimer()`.
+

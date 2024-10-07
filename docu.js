@@ -29,21 +29,21 @@ class Document {
   constructor() {
     this.#container = document.querySelector('.container');
     this.#bouton = document.querySelector('button');
-    this.#bouton.addEventListener('click', this.afficher.bind(this));
+    this.#bouton.addEventListener('click', this.afficher);
     this.#compteur = new Compteur();
   }
 
   /**
    * Récupère la valeur du compteur et l'affiche pendant 1 seconde
    */
-  afficher() {
+  afficher = () => {
     console.log(this)
     this.#container.style.display = "block";
     this.#container.innerText = `Compteur : ${this.#compteur.valeur}`
-    setTimeout(this.cacher.bind(this), 2000)
+    setTimeout(this.cacher, 2000)
   }
 
-  cacher() {
+  cacher = () => {
     console.log(this)
     this.#container.style.display = "none"
   }
